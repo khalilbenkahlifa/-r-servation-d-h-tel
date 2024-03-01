@@ -1,0 +1,84 @@
+/* Container */
+.container {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #B8FFF4;
+  border: 1px solid #FF6347;
+  border-radius: 5px;
+  max-width: 800px; /* Adjust as needed */
+}
+
+/* Title */
+.container h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Card */
+.card {
+  background-color: #FFA07A	;
+  border: 1px solid #DAA520;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card-title strong {
+  font-size: 18px;
+}
+
+.card hr {
+  margin: 10px 0;
+  border: 0;
+  border-top: 1px solid #dee2e6;
+}
+
+.card-body p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.card-footer {
+  text-align: center;
+}
+
+/* Form */
+form {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}

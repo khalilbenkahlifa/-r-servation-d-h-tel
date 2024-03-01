@@ -1,0 +1,73 @@
+<div class="container pt-5" *ngIf="!showform">
+    <div class="row">
+        <div class="col-4 mb-3" *ngFor="let item of listHotel">
+            <div class="card">
+                <div class="card-title text-center mt-2">
+                    <strong>{{item.nom}}</strong>
+                    <hr>
+                </div>
+                <div class="card-body">
+                    <p><strong>Lieu:</strong>{{item.lieu}}</p>
+                    <p><strong>Note:</strong>{{item.note}}</p>
+                    <p><strong>Prix:</strong>{{item.prixNuit}} Dt</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-success btn-sm" (click)="reserver(item.nom)">Valider</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" *ngIf="showform">
+        <div *ngFor="let item of listHotel">
+            <div class="col" *ngIf="hotleAreserve==item.nom">
+                <h3>Reservation : {{item.nom}}</h3>
+                <form #reservation="ngForm" (ngSubmit)="Form(reservation)">
+                    <div class=" row">
+                        <input type="hidden" name="holemane" value="item.nom" [(ngModel)]="holemane">
+                        <div class="col-6 mb-3">
+                            <label for="" class="form-label">Du</label>
+                            <input type="date" name="Du" id="" class="form-control" [(ngModel)]="Du">
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label class="form-label">Au</label>
+                            <input type="date" name="Au" id="" class="form-control" [(ngModel)]="Au">
+                        </div>
+                        <div class="col-8 mb-3">
+                            <label for="" class="form-label">Nomber de suite </label>
+                            <input type="number" name="chambres" id="" class="form-control" min="1" [(ngModel)]="chambres">
+                        </div>
+                        <div class="col-8 mb-3">
+                            <label for="" class="form-label">Adultes</label>
+                            <input type="number" name="Adultes" id="" class="form-control" min="1" [(ngModel)]="Adultes">
+                            <span class="text-danger">{{validationAdultes}}</span>
+                        </div>
+                        <div class="col-8 mb-3">
+                            <label for="" class="form-label">couple:</label>
+                            <input class="form-check-input" type="radio" name="statue" value="1" (click)="Marie()" [(ngModel)]="statue">
+                            <label for="" class="form-label">YES OR </label>
+                            <input class="form-check-input" type="radio" name="statue" value="2" (click)="Marie2()" [(ngModel)]="statue">
+                            <label for="" class="form-label">NO</label>
+                            <span class="text-danger">{{validationMarie}}</span>
+                        </div>
+                        <div class="col-8 mb-3" *ngIf="Marieyes">
+                            <label for="" class="form-label">Nombres d'enfants</label>
+                            <input type="number" name="enfants" id="" class="form-control" min="1" [(ngModel)]="enfants">
+                        </div>
+                        <div class="col-8 mb-3">
+                            <button class="btn btn-success btn-sm">Valider</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="validationform">
+        <div class="col">
+            {{message}}
+        </div>
+
+    </div>
+</div>
